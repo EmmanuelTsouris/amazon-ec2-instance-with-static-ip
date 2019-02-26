@@ -3,6 +3,7 @@
 $region = "us-west-2"
 
 ## KeyPair Used to retrive the Windows Administrator Password
+## Replace this with a valid keypair name from your account
 $keyPair = "winec2keypair"
 
 ## Instance Type
@@ -21,6 +22,7 @@ $primaryIinterface = New-Object Amazon.EC2.Model.InstanceNetworkInterfaceSpecifi
 $primaryIinterface.DeviceIndex = 0
 $primaryIinterface.SubnetId = $subnet.SubnetId
 $primaryIinterface.Groups.Add($sg.GroupId)
+## Replace PrivateIpAddress with a valid IP address for your subnet
 $primaryIinterface.PrivateIpAddress = "172.31.32.12"
 
 ## Tag on Launch
